@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Image from './components/image';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,7 +19,11 @@ class App extends Component {
         </nav>
         <div className="container header">
           <p>Start the game by clicking on the images!<br/>
-            BUT! Click each image only once - clicking the same image starts the game over!</p>        
+            BUT! Click each image only once - clicking the same image starts the game over!</p> 
+            
+            <div className="imageContainer container">images go here
+              <Image/>
+            </div>
         </div>
       </div>
     );

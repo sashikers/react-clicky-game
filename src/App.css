@@ -24,3 +24,9 @@ nav .brand-logo {
   background-color: #0C6291;
   padding: 10px;color: #FBFEF9;
 }
+
+.imageWrapperDiv {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
