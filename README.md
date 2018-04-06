@@ -1,12 +1,12 @@
-#Clicky Game!
+# Clicky Game!
 
-###Objective
+### Objective
 To create a memory game as a React app. 
 
-###Instructions
+### Instructions
 You can play the game [here](https://sashikers.github.io/react-clicky-game/).
 
-###Overview
+### Overview
 When loaded, the user sees 12 images. 
 ![initial](/public/assets/screenshots/initial.png)
 
