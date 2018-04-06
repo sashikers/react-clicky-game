@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import {ImageListItem} from './components/imageListItem';
 import {ImageList} from "./components/imageList";
+import imageSeed from "./components/imageSeed";
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
-    images: [
-      {
-        name: "Aquaria",
-        thumbnail: "https://vignette.wikia.nocookie.net/logosrupaulsdragrace/images/f/f6/Aquaria_Entrance_Look.png/revision/latest?cb=20180323182806"
-      },
-      {
-        name: "Asia OHara", 
-        thumbnail: "https://vignette.wikia.nocookie.net/logosrupaulsdragrace/images/a/ad/Asia_Entrance_Look.png/revision/latest?cb=20180323182835"
-      }
-    ],
+    images: imageSeed,
   };
 
   render() {
