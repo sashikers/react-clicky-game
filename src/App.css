@@ -3,26 +3,32 @@
 }
 
 body {
-  background-color: #FBFEF9;
+  background-color: #61707D;
 }
 
 nav {
-  background-color: #A63446;
-  color: #FBFEF9;
+  background-color: #8055b7;
+  color: #F5FBEF;
 }
 nav .brand-logo {
-  color: #FBFEF9;
+  color: #F5FBEF;
   font-weight: strong;
 }
 .navButton {
-  padding: 10px;
+  /* padding: 10px; */
   /* margin: 10px; */
 }
 
 .mainContainer {
   text-align: center;
-  background-color: #0C6291;
-  padding: 10px;color: #FBFEF9;
+  background-color: #F5FBEF;
+  padding: 10px;
+  color: #000004;
+  width: 90%;
+}
+
+.imageList {
+  /* width: 100%; */
 }
 
 .imageListItem {
@@ -30,7 +36,15 @@ nav .brand-logo {
   margin: 10px;
   height: 150px;
   overflow: hidden;
+  border: #8055b7 5px solid;
 }
+.imageListItem:hover {
+  border: #E85D75 5px solid;
+}
+.imageListItem:active {
+  border: #40F99B 5px solid;
+}
+
 
 .thumbnail {
   width: 150px;

@@ -17,9 +17,9 @@ class App extends Component {
           <div className="nav-wrapper z-depth-3">
             <div className="brand-logo center">Clicky game!</div>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li className="navButton">Score</li>
-              <li className="navButton">Top score</li>
-              <li className="navButton">Games played</li>
+              <li className="navButton"><a href="https://github.com/sashikers/react-clicky-game">GitHub</a></li>
+              <li className="navButton"><a href="https://sashikers.github.io/sasha-bessonova/">Sasha Bessonova</a></li>
+              
             </ul>
           </div>
         </nav>
