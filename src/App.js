@@ -6,22 +6,67 @@ import imageSeed from "./components/imageSeed";
 import './App.css';
 
 const images = imageSeed;
+let matches = [];
+let correctGuesses = 0;
+let topScore = 0;
+let message = "Start clicking!";
+
+const shuffleImages = () => {
+  // shuffle images
+  images.sort(function(a,b) {return 0.5 - Math.random()});
+
+};
+const newGame = () => {
+  // resets variables
+  matches = [];
+  correctGuesses  = 0;
+  shuffleImages();
+};
 
 class App extends Component {
   state = {
-    message: "Start clicking!",
-    topScore: 0,
-    currentScore: 0,
+    message: message,
+    topScore: topScore,
+    correctGuesses: correctGuesses,
     images: images,
   };
 
-  handleClick = () => {
-    console.log("handleClick");
-  };
+  handleClick = (name) => {
+    console.log("handleClick", name);
 
-  randomizeImages = () => {
-    // return this.state.map(x => x);
-    console.log("randomizeImages");
+    // if the guess is a new guess
+    if (matches.indexOf(name) === -1) {
+      // add name to the array of guessed queens
+      matches.push(name);
+      // increment guess counter
+      correctGuesses++;
+      // update visual div of correct guesses and message
+      this.setState({correctGuesses: correctGuesses});
+      this.setState({message: "Good guess! Now click an image you haven't clicked before."});
+
+      // add if statement to update top score 
+      if (correctGuesses > topScore) {
+        topScore = correctGuesses;
+        this.setState({message: "Good guess! And you've set the high score! Now click an image you haven't clicked before."});
+      }
+
+      shuffleImages();
+      this.setState({images: images});
+  
+    // set up condition for losing the game
+    } else if (correctGuesses < 11) {
+      console.log("already clicked");
+
+      // updates state
+      this.setState({message: "You already clicked that one! Start clicking to begin a new game."});
+      newGame();
+      this.setState({images: images});
+      
+    } else {
+      console.log("You win! Start clickiing to begin a new game.");
+      newGame();
+      this.setState({images: images});
+    }
   };
 
   render() {
@@ -42,11 +87,11 @@ class App extends Component {
             BUT! Click each image only once - clicking the same image starts the game over!</p> 
 
             <ul className="scoreboard container">
-              <li className="currentScore">Current score</li>
-              <li className="highestScore">Highest score</li>
-              <li className="gamesPlayed">Games played</li> <hr/>
-
+              <li className="score">Current score: {correctGuesses}</li>
+              <li className="score">Top score: {topScore}</li>
             </ul>
+            <h5>{this.state.message}</h5>
+            <hr/>
             
             <div className="imageContainer container">
               <ImageList>

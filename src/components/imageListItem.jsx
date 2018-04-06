@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ImageListItem = props => (
-            <div onClick={() => props.handleClick()} className="imageListItem">
+            <div onClick={() => props.handleClick(props.name)} className="imageListItem">
                 <img src={props.thumbnail} alt={props.name} className="thumbnail z-depth-5"/>
             </div>
 );
