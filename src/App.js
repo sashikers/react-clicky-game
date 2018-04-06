@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-import {ImageListItem} from './components/imageListItem';
+import ImageListItem from './components/imageListItem';
 import {ImageList} from "./components/imageList";
 import imageSeed from "./components/imageSeed";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+const images = imageSeed;
 
 class App extends Component {
   state = {
-    images: imageSeed,
+    message: "Start clicking!",
+    topScore: 0,
+    currentScore: 0,
+    images: images,
+  };
+
+  handleClick = () => {
+    console.log("handleClick");
+  };
+
+  randomizeImages = () => {
+    // return this.state.map(x => x);
+    console.log("randomizeImages");
   };
 
   render() {
@@ -34,11 +48,12 @@ class App extends Component {
 
             </ul>
             
-            <div className="imageContainer container">images go here
+            <div className="imageContainer container">
               <ImageList>
                 {this.state.images.map(image => {
                   return (
                     <ImageListItem
+                      handleClick={this.handleClick}
                       key={image.name}
                       name={image.name}
                       thumbnail={image.thumbnail}
