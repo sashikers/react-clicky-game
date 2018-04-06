@@ -1,16 +1,20 @@
 import React from 'react';
 
-class Image extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            clicked: false,
-        };
-    }
+export const imageListItem = props => (
+    <li className="imageListItem"></li>
+);
 
-    render() {
-        return <div className="imageWrapperDiv"></div>
-    }
-};
+// class Image extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             clicked: false,
+//         };
+//     }
 
-export default Image;
+//     render() {
+//         return <div className="imageWrapperDiv"></div>
+//     }
+// };
+
+// export default Image;

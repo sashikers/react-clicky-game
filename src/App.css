@@ -19,14 +19,22 @@ nav .brand-logo {
   /* margin: 10px; */
 }
 
-.header {
+.mainContainer {
   text-align: center;
   background-color: #0C6291;
   padding: 10px;color: #FBFEF9;
 }
 
-.imageWrapperDiv {
-  background-color: red;
-  width: 100px;
-  height: 100px;
+.imageListItem {
+  display: inline-block;
+  margin: 10px;
+  height: 200px;
+  overflow: hidden;
 }
+
+.thumbnail {
+  /* height: 271px;
+  width: 150px; */
+  clip: rect(10px,50px,50px,50px);
+}
+
